@@ -86,7 +86,7 @@ dirLight.shadow.bias = - 0.0001;
 const textureLoader = new THREE.TextureLoader();
 
 const groundGeo = new THREE.PlaneGeometry( 100000, 100000 );
-let groundTexture = textureLoader.load('./Textures/floor.png');
+let groundTexture = textureLoader.load('./textures/floor.png');
 groundTexture.wrapS = THREE.RepeatWrapping;
 groundTexture.wrapT = THREE.RepeatWrapping;
 groundTexture.repeat.set( 100, 100 );
@@ -148,7 +148,7 @@ resetCamera();
 function init_positions() {
 	for (let i = 0; i < NUM_BOIDS; i++) {
 
-		loader.load('./Models/fish.glb', function ( gltf ) {
+		loader.load('./models/fish.glb', function ( gltf ) {
 
 			const mesh = gltf.scene.children[ 0 ];
 			const s = 25;
