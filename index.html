@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Boids</title>
+		<link rel="stylesheet" href="style.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<script src="https://threejs.org/build/three.min.js"></script>
+		<script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
+		<script src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
+
+
+		<script type="module" src="main.js"></script>
+
+		<div id="leftPanel">
+			<button id="instructions">
+				Click to control camera
+			</button>
+			<div class="textPanel">
+				<p class="description">
+					Camera Controls:<br/>
+					Move: WASD<br/>
+					Go up: SPACE<br/>
+					Go down: Left Shift<br/>
+					Look Around: Mouse<br/>
+					Press Escape to Use Cursor Again
+				</p>
+			</div>
+			<div class="slidecontainer">
+				<p class="description">Central Tendency</p>
+				<form class="range">
+					<div class="form-group range__slider">
+						<input type="range" min="1" max="100" value="63" class="slider" id="centeringFactor">
+					</div>
+				</form>
+			</div>
+			<div class="slidecontainer">
+				<p class="description">Avoid Factor</p>
+				<form class="range">
+					<div class="form-group range__slider">
+						<input type="range" min="1" max="100" value="21" class="slider" id="avoidFactor">
+					</div>
+				</form>
+			</div>
+
+			<div class="slidecontainer">
+				<p class="description">Max Velocity</p>
+				<form class="range">
+					<div class="form-group range__slider">
+						<input type="range" min="1" max="100" value="13" class="slider" id="maxVelocity">
+					</div>
+				</form>
+			</div>
+		</div>
+		
+	
+		
+	</body>
+</html>
