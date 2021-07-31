@@ -108,12 +108,12 @@ renderer.shadowMap.enabled = true;
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 const skyBoxTexture = cubeTextureLoader.load([
-    './Textures/underwater/front.jpg',
-    './Textures/underwater/back.jpg',
-    './Textures/underwater/up.jpg',
-    './Textures/underwater/down.jpg',
-    './Textures/underwater/right.jpg',
-    './Textures/underwater/left.jpg',
+    './textures/underwater/front.jpg',
+    './textures/underwater/back.jpg',
+    './textures/underwater/up.jpg',
+    './textures/underwater/down.jpg',
+    './textures/underwater/right.jpg',
+    './textures/underwater/left.jpg',
   ]);
 scene.background = skyBoxTexture;
 // scene.background = new THREE.Color( 0x808080 );
