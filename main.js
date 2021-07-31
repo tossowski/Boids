@@ -148,7 +148,7 @@ resetCamera();
 function init_positions() {
 	for (let i = 0; i < NUM_BOIDS; i++) {
 
-		loader.load('./models/fish.glb', function ( gltf ) {
+		loader.load('./Models/fish.glb', function ( gltf ) {
 
 			const mesh = gltf.scene.children[ 0 ];
 			const s = 25;
@@ -347,8 +347,6 @@ function avoidOthers(boid) {
 	}
   }
 
-  var quaternion = new THREE.Quaternion(); // create one and reuse it
-
   
 function tick() {
 	for (let boid of boids) {
@@ -361,13 +359,10 @@ function tick() {
 		keepWithinBounds(boid);
 		const angle = Math.atan2(boid.velocity.z, boid.velocity.x);
 		boid.rotation.y = -angle;
-		// boid.rotation.x = -angle;
-		// boid.rotation.z = -angle;
 		const angle2 = Math.atan2(boid.velocity.y, Math.sqrt(boid.velocity.x * boid.velocity.x + boid.velocity.z * boid.velocity.z))
 
 		
 		boid.rotation.z = angle2;
-
 
 		// Update the position based on the current velocity
 		boid.position.x +=  boid.velocity.x;
@@ -377,19 +372,10 @@ function tick() {
 }
 
 init_positions();
-//tick();
-
-
 
 function animate() {
 
 	requestAnimationFrame( animate );
-
-	//const delta = clock.getDelta();
-	// required if controls.enableDamping or controls.autoRotate are set to true
-	// console.log(controls.rotationVector);
-	//controls.update(delta);
-
 	
 	tick();
 
