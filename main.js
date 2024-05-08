@@ -1,3 +1,7 @@
+import * as THREE from 'three';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
 let width = 1000;
 let height = 1000;
 let depth = 1000;
@@ -41,7 +45,7 @@ const renderer = new THREE.WebGLRenderer({"antialiasing":true});
 
 const clock = new THREE.Clock();
 // Controls
-let controls = new THREE.PointerLockControls(camera, document.body);
+let controls = new PointerLockControls(camera, document.body);
 instructions.addEventListener( 'click', function () {
 
 	controls.lock();
@@ -120,7 +124,7 @@ scene.background = skyBoxTexture;
 document.body.appendChild( renderer.domElement );
 
 // Model loader
-const loader = new THREE.GLTFLoader();
+const loader = new GLTFLoader();
 
 
 const resetCamera = function() {
